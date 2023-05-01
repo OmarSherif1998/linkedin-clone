@@ -33,10 +33,10 @@ function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection('posts').add({
-      name: 'Omar',
-      describtion: 'email',
+      name: user.displayName,
+      describtion: user.email,
       message: input,
-      photUrl: '',
+      photoUrl: user.proileURL || '',
       timestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
 
@@ -75,13 +75,13 @@ function Feed() {
         </div>{' '}
       </div>
 
-      {posts.map(({ id, data: { name, describtion, message, photUrl } }) => (
+      {posts.map(({ id, data: { name, describtion, message, photoUrl } }) => (
         <Post
           key={id}
           name={name}
           describtion={describtion}
           message={message}
-          photoURL={photUrl}
+          photoURL={photoUrl}
         />
       ))}
 
