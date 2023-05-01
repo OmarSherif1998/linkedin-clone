@@ -30,6 +30,19 @@ function Feed() {
       );
   }, []);
 
+  const sendPost = (e) => {
+    e.preventDefault();
+    db.collection('posts').add({
+      name: 'Omar',
+      describtion: 'email',
+      message: input,
+      photUrl: '',
+      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+
+    setInput('');
+  };
+
   return (
     <div className="feed">
       <div className="feed_inputContainer">
@@ -41,7 +54,9 @@ function Feed() {
               onChange={(e) => setInput(e.target.value)}
               type="text"
             />
-            <button>Send </button>{' '}
+            <button onClick={sendPost} type="submit">
+              Send{' '}
+            </button>{' '}
           </form>{' '}
         </div>{' '}
         <div className="feed__inputOptions">
