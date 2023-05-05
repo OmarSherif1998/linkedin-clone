@@ -3,6 +3,7 @@ import Login from './Login';
 import Feed from './Feed';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Widgets from './Widgets';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, logout, selectUser } from './features/userSlice';
 import { useEffect } from 'react';
@@ -27,6 +28,7 @@ function App() {
         dispatch(logout());
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className="app">
@@ -37,6 +39,7 @@ function App() {
         <div className="app__body">
           <Sidebar />
           <Feed />
+          <Widgets />
         </div>
       )}
     </div>
