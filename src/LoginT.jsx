@@ -56,48 +56,37 @@ function Login() {
   };
 
   return (
-    <div className="login">
-      <img
+    <div className="container">
+      {/* <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/291px-LinkedIn_Logo.svg.png?20170711102837 "
         alt=""
-      />
-      <form action="">
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Full name (Required if registring)"
-        />
-        <input
-          type="text"
-          value={profilePic}
-          onChange={(e) => setprofilePic(e.target.value)}
-          placeholder="profile picture URL (OPTIONAL)"
-        />
-        <input
-          type="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="E-mail"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <button type="submit" onClick={loginToApp}>
-          Sign In{' '}
-        </button>{' '}
-      </form>{' '}
-      <p>
-        not a member ? {'  '}{' '}
-        <span className="login__register" onClick={register}>
-          Register Now{' '}
-        </span>{' '}
-      </p>{' '}
+      /> */}
+      <div className="heading">
+        <h1>Welcome to your professional community</h1>
+      </div>
+
+      <div className="login">
+        <form action="">
+          <p>E-mail</p>
+          <input
+            type="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="E-mail"
+          />
+          <p>Password</p>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+          />
+          <button type="submit" onClick={loginToApp}>
+            Sign In
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
-
 export default Login;

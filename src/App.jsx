@@ -1,5 +1,6 @@
 import './App.css';
 import Login from './Login';
+import LoginT from './LoginT';
 import Feed from './Feed';
 import Header from './Header';
 import Sidebar from './Sidebar';
@@ -34,7 +35,7 @@ function App() {
     <div className="app">
       <Header />
       {!user ? (
-        <Login />
+        <LoginT />
       ) : (
         <div className="app__body">
           <Sidebar />

@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 935px;
+  width: 100%;
 }
 
 .app__body {
