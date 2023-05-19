@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.css';
+import '../CSS/Header.css';
 import { useDispatch } from 'react-redux';
-import { logout } from './features/userSlice';
-import { auth } from './Firebase';
+import { logout } from '../features/userSlice';
+import { auth } from '../Firebase';
 import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
@@ -21,7 +21,7 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        <img src={require('./linkedin.png')} alt="" />
+        <img src={require('../images/linkedin.png')} alt="" />
         <div className="header__search">
           <SearchIcon />
           <input type="text" placeholder="Search" />

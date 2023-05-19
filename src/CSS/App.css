@@ -1,15 +1,15 @@
 .app {
-  background-color: #f3f2ef;
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 935px;
   width: 100%;
+  margin: 0;
 }
 
 .app__body {
   display: flex;
-  margin-top: 35px;
+  margin-top: 30px;
   max-width: 1200px;
   margin-left: 20px;
   margin-right: 20px;

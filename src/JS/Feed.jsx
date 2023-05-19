@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import FlipMove from 'react-flip-move';
 import { useSelector } from 'react-redux';
-import { selectUser } from './features/userSlice';
-import { db } from './Firebase';
+import { selectUser } from '../features/userSlice';
+import { db } from '../Firebase';
 //rt { auth } from './Firebase';
-import './Feed.css';
+import '../CSS/Feed.css';
 import InputOption from './InputOption';
 import Post from './Post';
 import firebase from 'firebase/compat/app';

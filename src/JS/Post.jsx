@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import './Post.css';
+import '../CSS/Post.css';
 import InputOption from './InputOption';
 import { Avatar } from '@mui/material';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';

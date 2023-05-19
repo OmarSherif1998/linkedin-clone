@@ -1,14 +1,14 @@
-import './App.css';
-import Login from './Login';
-import LoginT from './LoginT';
-import Feed from './Feed';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Widgets from './Widgets';
+import '../CSS/App.css';
+import Login from '../JS/Login';
+import LoginT from '../JS/LoginT';
+import Feed from '../JS/Feed';
+import Header from '../JS/Header';
+import Sidebar from '../JS/Sidebar';
+import Widgets from '../JS/Widgets';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout, selectUser } from './features/userSlice';
+import { login, logout, selectUser } from '../features/userSlice';
 import { useEffect } from 'react';
-import { auth } from './Firebase';
+import { auth } from '../Firebase';
 
 function App() {
   const user = useSelector(selectUser);

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Widgets.css';
+import '../CSS/Widgets.css';
 import InfoIcon from '@mui/icons-material/Info';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 

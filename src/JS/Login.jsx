@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './LoginT.css';
-import { auth } from './Firebase';
+import '../CSS/LoginT.css';
+import { auth } from '../Firebase';
 import { useDispatch } from 'react-redux';
-import { login } from './features/userSlice';
+import { login } from '../features/userSlice';
 
 function Login() {
   const [name, setName] = useState('');
