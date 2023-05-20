@@ -1,7 +1,7 @@
 import '../CSS/App.css';
-import Login from '../JS/Login';
-import LoginT from '../JS/LoginT';
+import Login from './Login';
 import Feed from '../JS/Feed';
+import LHeader from '../JS/LHeader';
 import Header from '../JS/Header';
 import Sidebar from '../JS/Sidebar';
 import Widgets from '../JS/Widgets';
@@ -33,15 +33,20 @@ function App() {
   }, []);
   return (
     <div className="app">
-      <Header />
       {!user ? (
-        <LoginT />
+        <>
+          <LHeader />
+          <Login />
+        </>
       ) : (
-        <div className="app__body">
-          <Sidebar />
-          <Feed />
-          <Widgets />
-        </div>
+        <>
+          <Header />
+          <div className="app__body">
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
+        </>
       )}
     </div>
   );

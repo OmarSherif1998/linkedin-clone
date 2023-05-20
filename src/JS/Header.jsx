@@ -21,19 +21,20 @@ function Header() {
   return (
     <div className="header">
       <div className="header__left">
-        <img src={require('../images/linkedin.png')} alt="" />
+        <img src={require('../images/linkedin.png')} alt="linkedin logo" />
         <div className="header__search">
           <SearchIcon />
           <input type="text" placeholder="Search" />
         </div>
       </div>
-      <div className="header__right"> </div>
-      <Headeroptions Icon={HomeIcon} title=" Home" />
-      <Headeroptions Icon={SupervisorAccountIcon} title=" My Network" />
-      <Headeroptions Icon={BusinessCenterIcon} title=" Jobs" />
-      <Headeroptions Icon={ChatIcon} title=" Messaging" />
-      <Headeroptions Icon={NotificationsIcon} title="  Notifications" />
-      <Headeroptions avatar={true} title="  Me" onClick={logoutOfApp} />
+      <div className="header__right">
+        <Headeroptions Icon={HomeIcon} title=" Home" />
+        <Headeroptions Icon={SupervisorAccountIcon} title=" My Network" />
+        <Headeroptions Icon={BusinessCenterIcon} title=" Jobs" />
+        <Headeroptions Icon={ChatIcon} title=" Messaging" />
+        <Headeroptions Icon={NotificationsIcon} title="  Notifications" />
+        <Headeroptions avatar={true} title="  Me" onClick={logoutOfApp} />
+      </div>
     </div>
   );
 }
