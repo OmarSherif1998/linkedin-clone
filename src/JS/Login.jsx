@@ -8,9 +8,8 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import InputOption from './InputOption';
-import { useNavigate } from 'react-router-dom';
+
 function Login() {
-  const navigate = useNavigate();
   // const [name, setName] = useState('');
   // const [profilePic, setprofilePic] = useState('');
   // const register = () => {
