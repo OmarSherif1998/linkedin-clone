@@ -3,6 +3,7 @@
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 10px;
+  border: 1px solid black;
 }
 
 .post__header {
@@ -25,7 +26,11 @@
 
 .post__body {
   overflow-wrap: anywhere;
+
   /* it handles the post body if the text it bigger than the post area*/
+}
+.post__body > p {
+  margin-left: 70px;
 }
 
 .post__buttons {
