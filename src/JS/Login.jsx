@@ -10,34 +10,6 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 import InputOption from './InputOption';
 
 function Login() {
-  // const [name, setName] = useState('');
-  // const [profilePic, setprofilePic] = useState('');
-  // const register = () => {
-  //   if (!name) {
-  //     return alert('Please enter your name');
-  //   }
-
-  //   auth
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then((userAuth) => {
-  //       userAuth.user
-  //         .updateProfile({
-  //           displayName: name,
-  //           photoURL: profilePic,
-  //         })
-  //         .then(() => {
-  //           disptach(
-  //             login({
-  //               email: userAuth.user.email,
-  //               uid: userAuth.user.uid,
-  //               displayName: name,
-  //               photoURL: profilePic,
-  //             })
-  //           );
-  //         });
-  //     })
-  //     .catch((error) => alert(error));
-  // };
   const CarouselItems = [
     {
       header: 'Let the right people know you’re open to work',
@@ -59,9 +31,8 @@ function Login() {
       image: require('../images/person2.png'),
     },
   ];
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const disptach = useDispatch();
+  const [name, setName] = useState('');
+  const [profilePic, setprofilePic] = useState('');
   const loginToApp = (e) => {
     e.preventDefault();
 
@@ -79,6 +50,35 @@ function Login() {
       })
       .catch((error) => alert(error));
   };
+  const register = (e) => {
+    if (!name) {
+      return alert('Please enter your name');
+    }
+
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        userAuth.user
+          .updateProfile({
+            displayName: name,
+            photoURL: profilePic,
+          })
+          .then(() => {
+            disptach(
+              login({
+                email: userAuth.user.email,
+                uid: userAuth.user.uid,
+                displayName: name,
+                photoURL: profilePic,
+              })
+            );
+          });
+      })
+      .catch((error) => alert(error));
+  };
+  const disptach = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [counter, setCounter] = useState(0);
   const updateCount = (x) => {
     if (x === 'next' && counter < 2) {
@@ -103,30 +103,40 @@ function Login() {
         <div className="formContainer">
           <div className="login">
             <form action="">
-              <p>E-mail</p>
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Full name (Required)"
+              />
+              <input
+                type="text"
+                value={profilePic}
+                onChange={(e) => setprofilePic(e.target.value)}
+                placeholder="profile picture URL (OPTIONAL)"
+              />
               <input
                 type="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="E-mail"
               />
-              <p>Password</p>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
               />
-              <div className="fPass">
-                <p>Forgot password?</p>
+              <div className="signBtns">
+                <button type="submit" onClick={loginToApp}>
+                  Sign in
+                </button>
+                <button type="submit" onClick={() => register()}>
+                  Sign up
+                </button>
               </div>
-
-              <button type="submit" onClick={loginToApp}>
-                Sign In
-              </button>
-
-              <div className="text-divider">or</div>
             </form>
+            <div className="text-divider">or</div>
             <div className="extraBtn">
               <button>Sign in with Google</button>
               <button>New to LinkedIn? Join now</button>
@@ -198,12 +208,12 @@ function Login() {
           <div className="dropdown">
             <button>Choose a topic to learn about</button>
             <div className="dropdown-content">
-              <p>link</p>
-              <p>link</p>
-              <p>link</p>
-              <p>link</p>
-              <p>link</p>
-              <p>link</p>
+              <p>Business Analysis and Strategy</p>
+              <p>Business Software and Tools</p>
+              <p>Career Development</p>
+              <p>Web Design</p>
+              <p>Network and System Administration</p>
+              <p>Motion Graphics and VFX</p>
             </div>
           </div>
         </div>

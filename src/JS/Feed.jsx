@@ -34,14 +34,15 @@ function Feed() {
 
   const sendPost = (e) => {
     e.preventDefault();
-
-    db.collection('posts').add({
-      name: user.displayName,
-      describtion: user.email,
-      message: input,
-      photoUrl: user.photoURL || '',
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    if (input !== '') {
+      db.collection('posts').add({
+        name: user.displayName,
+        describtion: user.email,
+        message: input,
+        photoUrl: user.photoURL || '',
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
 
     setInput('');
   };

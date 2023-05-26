@@ -9,7 +9,7 @@
   z-index: 999;
 }
 
-.header__left {
+.header_left {
   display: flex;
 }
 
@@ -25,7 +25,7 @@
   justify-content: flex-end;
 }
 
-.header__left > img {
+.header_left > img {
   object-fit: contain;
   height: 40px;
   margin-right: 300px;
