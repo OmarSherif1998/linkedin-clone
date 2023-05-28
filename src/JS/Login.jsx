@@ -33,24 +33,9 @@ function Login() {
   ];
   const [name, setName] = useState('');
   const [profilePic, setprofilePic] = useState('');
-  const loginToApp = (e) => {
-    e.preventDefault();
-
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((userAuth) => {
-        disptach(
-          login({
-            email: userAuth.user.email,
-            uid: userAuth.user.uid,
-            displayName: userAuth.user.displayName,
-            proileURL: userAuth.user.photoURL,
-          })
-        );
-      })
-      .catch((error) => alert(error));
-  };
+  const disptach = useDispatch();
   const register = (e) => {
+    e.preventDefault();
     if (!name) {
       return alert('Please enter your name');
     }
@@ -72,11 +57,29 @@ function Login() {
                 photoURL: profilePic,
               })
             );
+            console.log(name);
           });
       })
       .catch((error) => alert(error));
   };
-  const disptach = useDispatch();
+  const loginToApp = (e) => {
+    e.preventDefault();
+
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((userAuth) => {
+        disptach(
+          login({
+            email: userAuth.user.email,
+            uid: userAuth.user.uid,
+            displayName: userAuth.user.displayName,
+            proileURL: userAuth.user.photoURL,
+          })
+        );
+      })
+      .catch((error) => alert(error));
+  };
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [counter, setCounter] = useState(0);
@@ -131,7 +134,7 @@ function Login() {
                 <button type="submit" onClick={loginToApp}>
                   Sign in
                 </button>
-                <button type="submit" onClick={() => register()}>
+                <button type="submit" onClick={register}>
                   Sign up
                 </button>
               </div>

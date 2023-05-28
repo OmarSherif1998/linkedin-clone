@@ -1,8 +1,6 @@
 import React from 'react';
 import '../CSS/LHeader.css';
-import { useDispatch } from 'react-redux';
-import { logout } from '../features/userSlice';
-import { auth } from '../Firebase';
+
 import Headeroptions from './Headeroptions';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
@@ -10,12 +8,6 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import SchoolIcon from '@mui/icons-material/School';
 
 function LHeader() {
-  const dispatch = useDispatch();
-  const logoutOfApp = () => {
-    dispatch(logout());
-    auth.signOut();
-  };
-
   return (
     <div className="header">
       <div className="header_left">
